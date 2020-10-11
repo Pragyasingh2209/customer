@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Feedback Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script type="text/javascript" src="f.txt"></script>
+ 
+  </head>
+
+  <body>
+
+    <svg class="loader">       
+      <image xlink:href="s.svg" src="s.png"/>    
+    </svg>
+    
+    <div id="panel" class="panel-container">
+      <img style="width: 40% !important; height: 40% !important;" src="https://www.mountmerugroup.com/wp-content/uploads/2016/12/mr-meru-logo.png" alt="">
+      
+      <canvas id="qr-code"></canvas>
+      <script src="qrious.min.js"></script>
+      <script>
+        /* JS comes here */
+        var qr;
+        (function() {
+
+          qr = new QRious({
+                      element: document.getElementById('qr-code'),
+                      size: 200,
+                      value: window.location.href
+                  });
+              })();
+      </script>        
+      
+      <div id="google_translate_element"></div>
+
+      <div class="ratings-container">       
+             
+        <input type="checkbox" id="myCheckbox3"/>
+        <label  for="myCheckbox3">
+        <div class="rating active">
+          <img
+            src="https://image.flaticon.com/icons/svg/187/187133.svg"
+            alt=""
+          />
+          <small>Happy</small>
+        </div>
+        </label>
+
+        <input type="checkbox" id="myCheckbox2"/>
+        <label  for="myCheckbox2">
+          <div class="rating">
+            <img
+              src="https://image.flaticon.com/icons/svg/187/187136.svg"
+              alt=""
+            />
+            <small>Neutral</small>
+          </div>
+          </label>
+
+        <input type="checkbox" id="myCheckbox1"/>
+        <label  for="myCheckbox1">
+        <div class="rating">
+          <img
+            src="https://image.flaticon.com/icons/svg/187/187150.svg"
+            alt=""
+          />
+          <small>Sad</small>
+        </div>
+      </label>
+
+      </div>
+
+      <strong>Which services you DID NOT like?</strong>
+
+      <div class="ratings-container">
+        <div class="rating1" id='Fuel Quality'>
+         
+          <small>Fuel Quality</small>
+        </div>
+        <div class="rating1" id='Less Waiting Time'>
+         
+          <small>Waiting Time</small>
+        </div>
+        <div class="rating1" id='Cleaniness'>
+          
+          <small>Cleaniness</small>
+        </div>
+        
+        
+      </div>
+      <div style="margin-top:-40px !important" class="ratings-container">
+        <div class="rating1" id='Services Available (Windshield Cleaning, Air etc.)'>
+         
+          <small>Services (Windshield Cleaning, Air etc.)</small>
+        </div>
+        <div class="rating1" id='Attendent Availability'>
+         
+          <small>Attendent Availability</small>
+        </div>
+        <div class="rating1" id='Staff Courtesy'>
+          
+          <small>Staff Courtesy</small>
+        </div>
+        
+     </div>
+     <strong>Any other suggesstions</strong>
+     <textarea  rows="4" cols="20"class="text-area"></textarea>
+
+     <span id="error"></span> 
+
+      <button class="btn" id="send">Send review</button>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
